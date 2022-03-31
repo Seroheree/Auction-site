@@ -1,0 +1,212 @@
+body{
+    background-color: #111;
+    margin:0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.container{
+    width:80%;
+    margin:0 auto;
+    background-color: white;
+    min-height: 900px;
+}
+.container-padding{
+    padding-top:5%;
+    padding-bottom:-5%;
+}
+.main-nav{
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    background-color: #f2f2f2;
+    align-items: center;
+    margin-top:1%;
+
+}
+.main-nav ul{
+    list-style-type: none;
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+
+}
+.main-nav ul a{
+    text-decoration: none;
+    color:#111;
+    font-size: 1.1em;
+    font-weight: 600;
+    z-index:1;
+}
+.main-nav ul li{
+    position: relative;
+    z-index:1;
+
+}
+.main-nav ul li::before {
+    content:"";
+    left:0;
+    height: 100%;
+    width:0%;
+    position: absolute;
+    background-color: #111;
+    opacity: 0.8;
+    transition:.3s ease-in-out;
+    overflow: hidden;
+    z-index: -1;
+}
+.main-nav ul li:hover::before{
+    width:100%;
+}
+.logo{
+
+    margin-left:5%;
+}
+.logo a{
+    color: #0066ff;
+    text-decoration: none;
+}
+.auction {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin:0 auto;
+    margin-top:2%;
+    padding:10px;
+    border:1px solid #0066ff;
+}
+.auction h2{
+    color:#0066ff;
+}
+.auction-photo-title{
+    display: flex;
+    width: 70%;
+}
+.auction-photo-title img {
+    margin-right: 2%;
+}
+.auction-price-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+footer{
+    color:#0066ff;
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+    color:#0066ff;
+    transition: .3s;
+}
+footer a:hover{
+    background-color: white;
+    border-radius: 50%;
+}
+
+.add-auction-form{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 600px;
+    color:#0066ff;
+    background-color: #111;
+    font-size:1.1em;}
+
+.add-auction-form input, .add-auction-form button, .register-form input, .register-form button{
+    margin: 0 auto;
+    width:70%;
+}
+.register-form input{
+    height: 8%;
+}
+.auction-form-description{
+    height: 300px;
+}
+.add-auction-form button, .register-form button{
+    font-size:1.2em;
+    width: 80%;
+}
+.register-form{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    height: 350px;
+    margin:0 auto;
+    justify-content: space-around;
+    background-color:#111;
+    color:#0066ff;
+    font-size:1.2em;
+}
+.success{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#0066ff;
+    background-color:#111;
+    width:500px;
+    height: 500px;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+}
+.success a{
+    text-decoration: none;
+    color:#0066ff;
+    transition: .3s ease-in-out;
+    font-size:1.2em;
+
+}
+.success a:hover{
+    font-size:1.7em;
+}
+.auction-inside{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin:0 auto;
+    color:#0066ff;
+}
+.auction-inside figure{
+    font-size:1.5em;
+    margin:0 auto;
+    width:100%;
+}
+.auction-inside-description{
+
+    width:100%;
+    font-size: 1.2em;
+}
+
+.auction-inside-nav{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+.auction-inside-nav-contact{
+    font-size:1.2em;
+}
+.auction-inside-nav-contact span{
+    display: flex;
+    align-items: center;
+}
+.user-panel-align{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:80%;
+    margin:10px auto;
+    padding:10px;
+    border:1px solid #0066ff;
+}
+.user-panel-align a{
+    color:black;
+    text-decoration:none;
+}

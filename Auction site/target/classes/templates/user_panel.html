@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <title>user panel</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <h2 th:text="${user.email}"></h2>
+            <ul>
+                <li><a href="/user_panel/change_password">change password</a></li>
+                <li><a href="/logout">logout</a></li>
+            </ul>
+            
+        </nav>
+    
+        <div>
+            <h1>Your auctions:</h1>
+
+
+                <div th:each="auction : ${auctions}">
+                    <a th:href="@{'/auctions/' + ${auction.id}}">
+                       <div class="user-panel-align">
+                           <img th:src="@{${auction.photosImagePath}}" width="120" height="120"/>
+                           <h2 th:text="${auction.title}"></h2>
+                           <h2 th:text="${auction.description}"></h2>
+                           <h2 th:text="${auction.price}"></h2>
+                           <h2 th:text="${auction.time}"></h2>
+                       </div>
+                    </a>
+                </div>
+
+
+        </div>
+    
+    </div>
+</body>
+</html>

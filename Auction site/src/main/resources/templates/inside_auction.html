@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+    <div class="container">
+        <nav sec:authorize="isFullyAuthenticated()" class="main-nav">
+            <h2 class="logo"> <a href="/">Auctions</a></h2>
+            <ul>
+                <li sec:authentication="name"></li>
+                <li><a href="/logout"> logout</a></li>
+                <li><a href="/user_panel"> user panel</a></li>
+                <li><a href="/add_auction"> create new auction </a></li>
+            </ul>
+
+        </nav>
+
+        <nav sec:authorize="!isFullyAuthenticated()" class="main-nav">
+            <ul>
+                <li><a href="/login">click here to login</a></li>
+                <li><a href="/register">click here to register</a></li>
+                <li><a href="/add_auction"> create new auction </a></li>
+            </ul>
+        </nav> 
+        <div class="auction-inside container-padding">
+            
+            <div  class="auction-inside-nav">
+                <figure>
+                    <figcaption th:text="${auction.title}"></figcaption>
+                    <img th:src="@{${auction.photosImagePath}}" width="800" height="600"/>
+                </figure>
+                <div class="auction-inside-nav-contact">
+                    <span>
+                        <h2>$ </h2>
+                        <p th:text="${auction.price}"> </p>
+                    </span>
+
+                    <p th:text="${user.email}"></p>
+                    <span>
+                        <p>☎</p>
+                        <p th:text="${user.phoneNumber}"></p>
+                    </span>
+                </div>
+                
+            </div>
+           
+            
+
+            <div class="auction-inside-description">
+                <p th:text="${auction.description}"></p>
+            </div>
+            
+           
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

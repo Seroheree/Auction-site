@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+    <div class="container container-padding">
+        <form action="#" th:action="@{/add_auction}" th:object="${AuctionPattern}" method="post" enctype="multipart/form-data" class="add-auction-form">
+            <p th:if="${#fields.hasAnyErrors()}" th:errors="*{all}"></p>
+            <label>Title</label>
+            <input type="text" th:field="*{title}"/>
+            <label>Description</label>
+            <input type="text" th:field="*{description}" class="auction-form-description"/>
+            <label>Price</label>
+            <input type="text" th:field="*{price}"/>
+            <label>title</label>
+            <input type="file" name="image" accept="image/png, image/jpeg"/>
+            <button type="submit">Create Auction</button>
+        </form>
+    </div>
+</body>
+</html>
