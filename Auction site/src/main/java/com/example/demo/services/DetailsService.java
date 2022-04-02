@@ -40,11 +40,12 @@ public class DetailsService implements UserDetailsService {
         userRepo.save(user);
     }
 
-//    public void changePassword(CustomUserDetails loggedUser, ChangePasswordProjection passwordProjection){
-//        User user=loggedUser.getUser();
-////        if(!user.getPassword().equals(passwordProjection.getOldPassword())){
-//        user.setPassword(encodedPassword(user));
-//        userRepo.save(loggedUser.getUser());
-//    }
+   public void changePassword(CustomUserDetails loggedUser, ChangePasswordProjection passwordProjection){
+       User user=loggedUser.getUser();
+//        if(!user.getPassword().equals(passwordProjection.getOldPassword())){
+       user.setPassword(encodedPassword(user));
+       userRepo.save(loggedUser.getUser());
+   }
+    //this function doesnt work- yet
 
 }
